@@ -51,6 +51,7 @@ local Checkkey = Tabs.KeySys:AddButton({
 		local response = KeyGuardLibrary.validateDefaultKey(key)
 		if response == trueData then
 			print("Key is valid")
+				Fluent:Destroy()
 
 			-- Load Full UI and Addons
 			local Library = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
