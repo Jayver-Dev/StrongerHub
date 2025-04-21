@@ -60,14 +60,10 @@ Tabs.Aimbot:AddButton({
     end
 })
 
-Tabs.Main:AddInput("KillAll", {
-    Title = "Kill",
-    Description = "Attempts to kill player",
-    Default = "",
-    Placeholder = "Username",
-    Numeric = false,
-    Finished = true,
+Tabs.Main:AddButton({
+    Title = "fling",
+    Description = "Fling player",
     Callback = function(Value)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Jayver-Dev/kill-all/refs/heads/main/kill.lua"))()
-end
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Jayver-Dev/kill-all/refs/heads/main/fling.lua"))()
+    end
 })
