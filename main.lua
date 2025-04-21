@@ -2,6 +2,7 @@ local Library = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
+
 local Window = Library:CreateWindow({
     Title = "StrongerHub",
     SubTitle = "By j4y11",
@@ -12,18 +13,18 @@ local Window = Library:CreateWindow({
     MinimizeKey = Enum.KeyCode.LeftControl
 })
 
-
 Library:Notify({
         Title = "Welcome",
         Content = "Welcome to StrongerHub",
-        SubContent = "By j4y11", -- Optional
-        Duration = 5 -- Set to nil to make the notification not disappear
+        SubContent = "By j4y11", 
+        Duration = 5 
 })
 
 local Options = Library.Options
 
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "gavel" }),
+    Aimbot = Window:AddTab({ Title = "Aimbot", Icon = "crosshair"}),
     Misc = Window:AddTab({ Title = "Misc", Icon = "briefcase"}),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings-2" })
 }
@@ -51,3 +52,22 @@ Tabs.Misc:AddButton({
     end
 })
 
+Tabs.Aimbot:AddButton({
+    Title = "Launch Aimbot",
+    Description = "Launch Camlock",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Jayver-Dev/camlock/refs/heads/main/lock.lua"))()
+    end
+})
+
+Tabs.Main:AddInput("KillAll", {
+    Title = "Kill",
+    Description = "Attempts to kill player",
+    Default = "",
+    Placeholder = "Username",
+    Numeric = false,
+    Finished = true,
+    Callback = function(Value)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Jayver-Dev/kill-all/refs/heads/main/kill.lua"))()
+end
+})
